@@ -1,0 +1,90 @@
+html{
+    min-height: 100%;
+}
+
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    padding: 0px;
+    height: 100vh;
+}
+
+.canvas{
+    height: 100vh;
+    background-image: url("./img/bgimage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.nav-top {
+    background-color: transparent;
+    box-shadow: none;
+    align-self: flex-start;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    padding-right: 20px;
+    padding-left: 20px;
+    
+}
+nav ul a{
+    font-family: 'Inconsolata', monospace; 
+    /* font-size: 13px;    */
+}
+
+.brand-logo{
+    font-family: 'Inconsolata', monospace;
+}
+
+#logo-img{
+    vertical-align: middle;
+    width: 55px;
+    fill:white;
+}
+.banner{
+    text-align: center;
+    color: #fff;
+    margin-top: 80px;
+    font-family:  Courier, 'Inconsolata', monospace;  
+}
+.banner-content{
+    padding-top: 100px; 
+}
+
+input[type=search] {
+    background-color: transparent;
+    /* border: none !important; */
+    border: 1px solid #fff !important;
+    border-radius: 10px !important;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 24px !important;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    padding-left: 20px !important;
+    
+    transition: all 0.3s;
+
+}
+
+input[type=search]:focus {
+    border-bottom: none !important ;
+    box-shadow: none !important;
+    background-color: rgba(0,0,0, .3) !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    padding-left: 30px !important;
+    
+  }
+
+  #search{
+      margin-top: 50px;
+  }
+
+
+
