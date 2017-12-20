@@ -22,19 +22,30 @@ class LandingPage extends React.Component {
     }
 }
 
-const SearchResultLayout = () => (
-    <div className="container banner">
-        <SearchBar />
-    </div>
-)
+class SearchResultLayout extends React.Component {
+    render() {
+        return (
+            <div>
+                <div className="container banner">
+                    <SearchBar />
+                </div>
+                <Card/>
+            </div>
+
+        )
+    }
+}
+
+
 
 class PrimaryLayout extends React.Component {
     render() {
         return (
             <div className="canvas">
                 <NavBar />
-                <LandingPage />
-                <Card />
+                <Route path="/" exact component={LandingPage} />
+                <Route path="/search" component={SearchResultLayout} />
+
 
             </div>
 
