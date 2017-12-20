@@ -86,5 +86,83 @@ input[type=search]:focus {
       margin-top: 50px;
   }
 
+.item-image{
+     width: 150px !important;
+     padding-right: 20px;
+    padding-left: 20px;
+    margin: auto;
+    height: 175px;
+ }
+
+.item-card{
+   
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    color: black !important;
+}
+.cards{
+    text-align: center;
+}
+
+.card-title{
+line-height: 1px !important;
+margin: 0 0 10px 0;
+padding: 0 0 5px 0;
+}
+
+.item-title{
+    font: 15px Courier ;
+}
+
+.black{
+    color: black;
+}
 
 
+.retail-logo img{
+    width: 30px !important;
+    max-width: 100% !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.border{
+border-bottom: 1px solid #ccc;
+}
+.card-price{
+	color: black;
+
+}
+ em{
+     font: 200 20px monospace;
+     color:#48cfad;
+     	font-size:22px; 
+    
+ }
+
+.card-link a{
+       color: black;
+    font: 15px monospace;
+    border: 1px solid white;
+    padding: 2px 5px;
+    border-radius: 20px;
+    background: #ff9900;
+}
+
+.card-link-wal a{
+    color: white;
+     font: 15px monospace;
+    border: 1px solid white;
+    padding: 2px 5px;
+    border-radius: 20px;
+    background: #007dc6;
+}
+
+.wal{
+   color: #007dc6;
+   border-bottom: 3px solid #007dc6;
+    }
+.amz{
+    color:#ff9900;
+    border-bottom: 3px solid #ff9900;
+   }
