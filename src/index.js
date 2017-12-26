@@ -28,9 +28,7 @@ const Compair = () => (
 
 
 
-ReactDOM.render(
-  
-        <Compair />,
-   
+ReactDOM.render(  
+        <Compair />,  
     document.getElementById('root')
 );
