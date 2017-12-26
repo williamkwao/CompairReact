@@ -1,34 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import LandingPage from './containers/LandingPage'
-import SearchResultLayout from './containers/SearchResultLayout';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import Search from './reducers/search';
+import Compair from './containers/Compair'
 import './index.css';
 
-class PrimaryLayout extends React.Component {
-    render() {
-        return (
-            <div className="canvas">
-                <NavBar />
-                <Route path="/" exact component={LandingPage} />
-                <Route path="/search" component={SearchResultLayout} />
-            </div>
+const store = createStore(
+    Search
+);
 
-        );
-    };
-}
-
-
-const Compair = () => (
-    <BrowserRouter>
-        <PrimaryLayout />
-    </BrowserRouter>
-)
-
-
-
-ReactDOM.render(  
-        <Compair />,  
+ReactDOM.render(
+    <Provider store={store}>
+        <Compair />
+    </Provider>,
     document.getElementById('root')
 );
