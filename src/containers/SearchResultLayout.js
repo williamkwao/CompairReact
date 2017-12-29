@@ -17,7 +17,7 @@ export default class SearchResultLayout extends React.Component {
                 name={item.name}
                 salePrice={item.salePrice}
                 shortDescription={item.shortDescription}
-                image={item.image}
+                image={item.mediumImage}
                 key={index}
             />
         ));
@@ -29,7 +29,7 @@ export default class SearchResultLayout extends React.Component {
                 </div>
                 <div>
                     <div className="row cards">
-                        {CardComponents} />
+                        {CardComponents} 
                         </div>
                 </div>
             </div>
