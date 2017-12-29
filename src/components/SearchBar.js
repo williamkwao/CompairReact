@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 export default class SearchBar extends Component {
     
     state = {
@@ -10,13 +11,15 @@ export default class SearchBar extends Component {
         const search = e.target.value;
         this.setState({ searchTerm: search });
         console.log(this.state.searchTerm);
-
+        
     };
 
     onSearchSubmit = (e) => {
         if (e) e.preventDefault();
+        if (e) e.stopPropagation();
         const search = e.target.value;
-        this.setState({ searchTerm: '' });
+        this.props.onSearchSubmit(search);
+        //this.setState({ searchTerm: '' });
         console.log(this.state.searchTerm);
     }
 
@@ -37,4 +40,3 @@ export default class SearchBar extends Component {
         );
     };
 }
-

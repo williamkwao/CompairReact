@@ -25,7 +25,7 @@ export default class SearchResultLayout extends React.Component {
         return (
             <div>
                 <div className="container banner">
-                    <SearchBar />
+                    <SearchBar onSearchSubmit = {this.props.getSearchResults} />
                 </div>
                 <div>
                     <div className="row cards">
