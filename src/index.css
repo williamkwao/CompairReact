@@ -166,3 +166,14 @@ border-bottom: 1px solid #ccc;
     color:#ff9900;
     border-bottom: 3px solid #ff9900;
    }
+
+.notFound {
+    font-family: 'blanchcaps_inline', sans-serif;
+    text-align: center;
+    font-weight: normal;
+    margin: 226px;
+    font-size:4.2em;
+    color: white;
+    
+}
+
