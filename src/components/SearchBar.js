@@ -10,7 +10,7 @@ export default class SearchBar extends Component {
     onSearchChange = (e) => {
         const search = e.target.value;
         this.setState({ searchTerm: search });
-        console.log(this.state.searchTerm);
+        //console.log(this.state.searchTerm);
         
     };
 
@@ -18,7 +18,7 @@ export default class SearchBar extends Component {
         if (e) e.preventDefault();
         if (e) e.stopPropagation();
         const search = e.target.value;
-        this.props.onSearchSubmit(search);
+        this.props.onSearchSubmit(this.state.searchTerm);
         //this.setState({ searchTerm: '' });
         console.log(this.state.searchTerm);
     }

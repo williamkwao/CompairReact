@@ -1,10 +1,9 @@
 import * as ActionTypes from './ActionTypes';
-import jsonp from 'jsonp';
 
-export const getSearchResults =(searchTerm) =>{
+export const getSearchResults =(searchTerm, items) =>{
   return{
       type: ActionTypes.UPDATE_SEARCH_RESULTS,
-      searchResults: [],
+      searchResults: items,
       searchTerm
   }
 }
