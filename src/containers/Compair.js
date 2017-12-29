@@ -15,7 +15,7 @@ class PrimaryLayout extends React.Component {
         return (
             <div className="canvas">
                 <NavBar />
-               < Route
+                < Route
                     path="/" exact
                     component={(props) => (
                         <LandingPage
@@ -48,7 +48,7 @@ class Compair extends React.Component {
     fetchAndUpdate = (searchTerm) => {
         const { dispatch, searchState } = this.props;
         const getSearchResults = bindActionCreators(SearchActionCreators.getSearchResults, dispatch);
-        jsonp('http://api.walmartlabs.com/v1/search?apiKey=hfx9xrw8qm7xt6urgnxhexy6&query='+searchTerm, null, function (err, data) {
+        jsonp('http://api.walmartlabs.com/v1/search?apiKey=hfx9xrw8qm7xt6urgnxhexy6&query=' + searchTerm, null, function (err, data) {
             if (err) {
                 console.error(err.message);
             } else {
