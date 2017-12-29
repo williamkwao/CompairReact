@@ -7,7 +7,8 @@ import Compair from './containers/Compair'
 import './index.css';
 
 const store = createStore(
-    Search
+    Search,
+    window.devToolsExtension && window.devToolsExtension()
 );
 
 ReactDOM.render(
