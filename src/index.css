@@ -108,7 +108,6 @@ input[type=search]:focus {
 
 .item-title {
     font: 15px Courier;
-    font: 15px Courier;
     overflow: hidden;
     text-overflow: ellipsis !important;
     display: -webkit-box;
