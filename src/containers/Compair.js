@@ -11,38 +11,6 @@ import SearchResultLayout from './SearchResultLayout';
 import * as SearchActionCreators from '../actions/search';
 import * as ApiProperties from '../properties/api-properties';
 
-class PrimaryLayout extends React.Component {
-    render() {
-        return (
-            <div className="canvas">
-                <NavBar />
-                <Route
-                    path="/" exact
-                    component={(props) => (
-                        <LandingPage
-                            searchState={this.props.searchState}
-                            getSearchResults={this.props.getSearchResults}
-                            {...props}
-                        />
-                    )}
-                />
-                <Route
-                    path="/search/:item?"
-                    component={(props) => (
-                        <SearchResultLayout
-                            searchState={this.props.searchState}
-                            getSearchResults={this.props.getSearchResults}
-                            {...props}
-                        />
-                    )}
-                />
-            </div>
-
-        );
-    };
-}
-
-
 class Compair extends React.Component {
     static propTypes = {
         searhState: PropTypes.object
@@ -73,6 +41,43 @@ class Compair extends React.Component {
         )
     }
 }
+
+class PrimaryLayout extends React.Component {
+    render() {
+        let canvasStyle = {};
+        if (window.location.pathname.startsWith("/search")) {
+            canvasStyle = { "backgroundImage": "none" };
+        }
+        return (
+            <div style={canvasStyle} className="canvas">
+                <NavBar />
+                <Route
+                    path="/" exact
+                    component={(props) => (
+                        <LandingPage
+                            searchState={this.props.searchState}
+                            getSearchResults={this.props.getSearchResults}
+                            {...props}
+                        />
+                    )}
+                />
+                <Route
+                    path="/search/:item?"
+                    component={(props) => (
+                        <SearchResultLayout
+                            searchState={this.props.searchState}
+                            getSearchResults={this.props.getSearchResults}
+                            {...props}
+                        />
+                    )}
+                />
+            </div>
+
+        );
+    };
+}
+
+
 
 const mapStateToProps = state => (
     {
