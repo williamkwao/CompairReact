@@ -16,21 +16,23 @@ class PrimaryLayout extends React.Component {
         return (
             <div className="canvas">
                 <NavBar />
-                < Route
+                <Route
                     path="/" exact
                     component={(props) => (
                         <LandingPage
                             searchState={this.props.searchState}
                             getSearchResults={this.props.getSearchResults}
+                            {...props}
                         />
                     )}
                 />
                 <Route
-                    path="/search"
+                    path="/search/:item?"
                     component={(props) => (
                         <SearchResultLayout
                             searchState={this.props.searchState}
                             getSearchResults={this.props.getSearchResults}
+                            {...props}
                         />
                     )}
                 />
