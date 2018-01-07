@@ -44,12 +44,13 @@ class Compair extends React.Component {
 
 class PrimaryLayout extends React.Component {
     render() {
-        let canvasStyle = {};
+        let canvasstyle = "canvas";
         if (window.location.pathname.startsWith("/search")) {
-            canvasStyle = { "backgroundImage": "none" };
+            canvasstyle += " searchcanvas";
+            //searchcanvas = { "backgroundImage": "none" };
         }
         return (
-            <div style={canvasStyle} className="canvas">
+            <div className= {canvasstyle}>
                 <NavBar />
                 <Route
                     path="/" exact
