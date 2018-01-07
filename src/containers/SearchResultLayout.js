@@ -9,6 +9,17 @@ export default class SearchResultLayout extends React.Component {
         searchState: PropTypes.object.isRequired,
         getSearchResults: PropTypes.func.isRequired,
     }
+    componentDidMount = () => {
+        let item = this.props.match.params.item;
+        if (this.props.searchState.searchTerm != item && item != null) {
+            this.props.getSearchResults(item);
+        }
+    }
+
+    onSearchSubmit = (input) => {
+        this.props.history.push("/search/" + input);
+    }
+
     render() {
         const searchResults = this.props.searchState.searchResults;
 
@@ -17,7 +28,7 @@ export default class SearchResultLayout extends React.Component {
                 name={item.name}
                 salePrice={item.salePrice}
                 shortDescription={item.shortDescription}
-                image={item.image}
+                image={item.mediumImage}
                 key={index}
             />
         ));
@@ -25,12 +36,12 @@ export default class SearchResultLayout extends React.Component {
         return (
             <div>
                 <div className="container banner">
-                    <SearchBar />
+                    <SearchBar onSearchSubmit={this.onSearchSubmit} />
                 </div>
                 <div>
                     <div className="row cards">
-                        {CardComponents} />
-                        </div>
+                        {CardComponents}
+                    </div>
                 </div>
             </div>
 

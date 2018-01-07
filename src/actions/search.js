@@ -1,10 +1,10 @@
 import * as ActionTypes from './ActionTypes';
 
-export const getSearchResults =(searchTerm) =>{
+export const getSearchResults =(searchTerm, items) =>{
   return{
       type: ActionTypes.UPDATE_SEARCH_RESULTS,
-      searchResulsts: [],
+      searchResults: items,
       searchTerm
-
   }
 }
+
