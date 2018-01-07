@@ -194,3 +194,16 @@ em {
     background-color: #fff;
     
 }
+
+
+.notFound {
+    font-family: 'blanchcaps_inline', sans-serif;
+    text-align: center;
+    font-weight: normal;
+    margin: 226px;
+    font-size:4.2em;
+    color: white;
+    
+}
+
+
