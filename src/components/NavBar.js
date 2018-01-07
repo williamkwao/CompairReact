@@ -7,7 +7,7 @@ class NavBar extends React.Component {
                 <nav className="nav-top">
                     <div className="nav-wrapper">
                         <a href="#" className="brand-logo">
-                            <img id="logo-img" src="img/compairlogo.png" /> compair </a>
+                            <img id="logo-img" src="/img/compairlogo.png" /> compair </a>
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
                             <li>
                                 <a href="#">About</a>
