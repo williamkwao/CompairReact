@@ -1,7 +1,6 @@
-html{
+html {
     min-height: 100%;
 }
-
 
 body {
     margin: 0px;
@@ -10,14 +9,12 @@ body {
     height: 100vh;
 }
 
-.canvas{
+.canvas {
     height: 100vh;
     background-image: url("/img/bgimage.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
 
 .nav-top {
     background-color: transparent;
@@ -28,30 +25,32 @@ body {
     z-index: 10;
     padding-right: 20px;
     padding-left: 20px;
-    
 }
-nav ul a{
-    font-family: 'Inconsolata', monospace; 
+
+nav ul a {
+    font-family: 'Inconsolata', monospace;
     /* font-size: 13px;    */
 }
 
-.brand-logo{
+.brand-logo {
     font-family: 'Inconsolata', monospace;
 }
 
-#logo-img{
+#logo-img {
     vertical-align: middle;
     width: 55px;
-    fill:white;
+    fill: white;
 }
-.banner{
+
+.banner {
     text-align: center;
     color: #fff;
     margin-top: 80px;
-    font-family:  Courier, 'Inconsolata', monospace;  
+    font-family: Courier, 'Inconsolata', monospace;
 }
-.banner-content{
-    padding-top: 100px; 
+
+.banner-content {
+    padding-top: 100px;
 }
 
 input[type=search] {
@@ -67,81 +66,86 @@ input[type=search] {
     box-shadow: none;
     box-sizing: content-box;
     padding-left: 20px !important;
-    
     transition: all 0.3s;
-
 }
 
 input[type=search]:focus {
-    border-bottom: none !important ;
+    border-bottom: none !important;
     box-shadow: none !important;
-    background-color: rgba(0,0,0, .3) !important;
+    background-color: rgba(0, 0, 0, .3) !important;
     color: #fff !important;
     border: 1px solid #fff !important;
     padding-left: 30px !important;
-    
-  }
+}
 
-  #search{
-      margin-top: 50px;
-  }
+#search {
+    margin-top: 50px;
+}
 
-.item-image{
+.item-image {
     width: 150px !important;
-     /* padding-right: 20px;
+    /* padding-right: 20px;
     padding-left: 20px; */
     margin: auto;
     height: 150px;
- }
+}
 
-.item-card{
-   
+.item-card {
     margin-left: 20px !important;
     margin-right: 20px !important;
     color: black !important;
 }
-.cards{
+
+.cards {
     text-align: center;
 }
 
-.card-title{
-line-height: 1px !important;
-margin: 0 0 10px 0;
-padding: 0 0 5px 0;
+.card-title {
+    line-height: 1px !important;
+    margin: 0 0 10px 0;
+    padding: 0 0 5px 0;
 }
 
-.item-title{
-    font: 15px Courier ;
+.item-title {
+    font: 15px Courier;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+    display: -webkit-box;
+    line-height: 16px;
+    max-height: 32px;
+    min-height: 32px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
-.black{
+.black {
     color: black;
 }
 
-
-.retail-logo img{
+.retail-logo img {
     width: 30px !important;
     max-width: 100% !important;
     position: absolute;
     top: 20px;
     right: 20px;
 }
-.border{
-border-bottom: 1px solid #ccc;
-}
-.card-price{
-	color: black;
 
+.border {
+    border-bottom: 1px solid #ccc;
 }
- em{
-     font: 200 20px monospace;
-     color:#48cfad;
-     	font-size:22px; 
-    
- }
 
-.card-link a{
-       color: black;
+.card-price {
+    color: black;
+}
+
+em {
+    font: 200 20px monospace;
+    color: #48cfad;
+    font-size: 22px;
+}
+
+.card-link a {
+    color: black;
     font: 15px monospace;
     border: 1px solid white;
     padding: 2px 5px;
@@ -149,23 +153,48 @@ border-bottom: 1px solid #ccc;
     background: #ff9900;
 }
 
-.card-link-wal a{
+.card-link-wal a {
     color: white;
-     font: 15px monospace;
+    font: 15px monospace;
     border: 1px solid white;
     padding: 2px 5px;
     border-radius: 20px;
     background: #007dc6;
 }
 
-.wal{
-   color: #007dc6;
-   border-bottom: 3px solid #007dc6;
-    }
-.amz{
-    color:#ff9900;
+.wal {
+    color: #007dc6;
+    border-bottom: 3px solid #007dc6;
+}
+
+.amz {
+    color: #ff9900;
     border-bottom: 3px solid #ff9900;
-   }
+}
+
+.searchcanvas{
+    background-image: none ;
+}
+
+.searchcanvas .nav-text ul a {
+    color: black;
+   
+}
+.searchcanvas input[type=search] {
+    border: 1px solid #000 !important;
+}
+.searchcanvas .brand-logo {
+    color: #000;
+}
+.searchcanvas input[type=search]:focus {
+   background-color: #fff !important;
+   color: #000 !important;
+}
+.searchcanvas .nav-top {
+    background-color: #fff;
+    
+}
+
 
 .notFound {
     font-family: 'blanchcaps_inline', sans-serif;
@@ -176,4 +205,5 @@ border-bottom: 1px solid #ccc;
     color: white;
     
 }
+
 

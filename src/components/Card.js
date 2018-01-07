@@ -22,11 +22,11 @@ const Card = (props) => {
                         <p><a href="#">Go to Amazon</a></p>
                     </div>
                     <div className="retail-logo">
-                        <img src="img/amazonlogo.png" />
+                        <img src="/img/amazonlogo.png" />
                     </div>
                 </div>
                 <div className="card-reveal">
-                    <span className ="card-title grey-text text-darken-4">More Info<i className="material-icons right">close</i></span>
+                    <span className="card-title grey-text text-darken-4">More Info<i className="material-icons right">close</i></span>
                     <p>{props.shortDescription}</p>
                 </div>
             </div>
@@ -42,7 +42,7 @@ Card.propTypes = {
     salePrice: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     shortDescription: PropTypes.string.isRequired,
-    
+
 }
 
 export default Card;
