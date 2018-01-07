@@ -7,6 +7,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import jsonp from 'jsonp';
 import NavBar from '../components/NavBar';
 import LandingPage from './LandingPage'
+import notFound from '../components/notFound'
 import SearchResultLayout from './SearchResultLayout';
 import * as SearchActionCreators from '../actions/search';
 import * as ApiProperties from '../properties/api-properties';
@@ -42,6 +43,7 @@ class Compair extends React.Component {
     }
 }
 
+
 class PrimaryLayout extends React.Component {
     render() {
         let canvasstyle = "canvas";
@@ -52,6 +54,7 @@ class PrimaryLayout extends React.Component {
         return (
             <div className= {canvasstyle}>
                 <NavBar />
+
                 <Route
                     path="/" exact
                     component={(props) => (
@@ -72,6 +75,7 @@ class PrimaryLayout extends React.Component {
                         />
                     )}
                 />
+              
             </div>
 
         );
