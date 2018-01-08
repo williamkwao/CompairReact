@@ -23,10 +23,15 @@ class Compair extends React.Component {
         jsonp(ApiProperties.WMT_API + searchTerm, null, function (err, data) {
             if (err) {
                 console.error(err.message);
-            } else {
+            } 
+            else {
                 console.log(data);
-                getSearchResults(searchTerm, data.items);
-
+                if (data.totalResults > 0){
+                    getSearchResults(searchTerm, data.items);
+                }else{
+                    getSearchResults(searchTerm, []); 
+                }
+                
             }
         });
     }
