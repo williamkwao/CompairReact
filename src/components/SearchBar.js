@@ -2,25 +2,27 @@ import React, { Component } from 'react';
 
 
 export default class SearchBar extends Component {
-    
+
     state = {
-        searchTerm: '',
+        searchTerm: this.props.searchTerm,
     };
 
     onSearchChange = (e) => {
         const search = e.target.value;
         this.setState({ searchTerm: search });
         //console.log(this.state.searchTerm);
-        
+
     };
 
     onSearchSubmit = (e) => {
+        console.log(this.state.searchTerm)
         if (e) e.preventDefault();
         if (e) e.stopPropagation();
-        const search = e.target.value;
-        this.props.onSearchSubmit(this.state.searchTerm);
-        //this.setState({ searchTerm: '' });
-        console.log(this.state.searchTerm);
+        if (this.state.searchTerm) {
+            this.props.onSearchSubmit(this.state.searchTerm);
+            console.log(this.state.searchTerm);
+        }
+
     }
 
     render() {

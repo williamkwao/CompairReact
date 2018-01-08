@@ -7,7 +7,7 @@ const Card = (props) => {
     return (
 
         <div className="col s12 m3 l3">
-            <div className="card item-card amz">
+            <div className="card item-card wal">
                 <div className="card-image waves-effect waves-block waves-light">
                     <img className="activator item-image" src={props.image} />
                 </div>
@@ -18,11 +18,11 @@ const Card = (props) => {
                     <div className="card-price">
                         <p>Price: <em>${props.salePrice}</em></p>
                     </div>
-                    <div className="card-link">
-                        <p><a href="#">Go to Amazon</a></p>
+                    <div className="card-link-wal">
+                        <p><a href={props.productUrl}>Go to Walmart</a></p>
                     </div>
                     <div className="retail-logo">
-                        <img src="/img/amazonlogo.png" />
+                        <img src="/img/wmtlogo.png" />
                     </div>
                 </div>
                 <div className="card-reveal">
