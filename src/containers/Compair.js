@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -18,7 +17,7 @@ class Compair extends React.Component {
     }
 
     fetchAndUpdate = (searchTerm) => {
-        const { dispatch, searchState } = this.props;
+        const { dispatch} = this.props;
         const getSearchResults = bindActionCreators(SearchActionCreators.getSearchResults, dispatch);
         jsonp(ApiProperties.WMT_API + searchTerm, null, function (err, data) {
             if (err) {
@@ -38,7 +37,6 @@ class Compair extends React.Component {
 
     render() {
         const { dispatch, searchState } = this.props;
-        const getSearchResults = bindActionCreators(SearchActionCreators.getSearchResults, dispatch);
 
         return (
             <BrowserRouter>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class NavBar extends React.Component {
     render() {
@@ -10,17 +11,12 @@ class NavBar extends React.Component {
             <div className="row">
                 <nav className="nav-top nav-text">
                     <div className="nav-wrapper">
-                        <a href="#" className="brand-logo">
-                            <img id="logo-img" src={logoimage} /> compair </a>
+                        <Link  className="brand-logo" to= "/">  
+                            <img id="logo-img" alt = "" src={logoimage} /> compair 
+                         </Link>
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
                             <li>
-                                <a href="#">About</a>
-                            </li>
-                            <li>
-                                <a href="#">Login</a>
-                            </li>
-                            <li>
-                                <a href="#">Cart</a>
+                                <a href="https://github.com/BlackPanthers/">About</a>
                             </li>
                         </ul>
                     </div>

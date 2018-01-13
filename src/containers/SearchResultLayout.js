@@ -11,7 +11,7 @@ export default class SearchResultLayout extends React.Component {
     }
     componentDidMount = () => {
         let item = this.props.match.params.item;
-        if (this.props.searchState.searchTerm != item && item != null) {
+        if (this.props.searchState.searchTerm !== item && item !== null) {
             this.props.getSearchResults(item);
         }
     }
