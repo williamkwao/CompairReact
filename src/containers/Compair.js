@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import jsonp from 'jsonp';
 import NavBar from '../components/NavBar';
 import LandingPage from './LandingPage'
@@ -17,20 +17,20 @@ class Compair extends React.Component {
     }
 
     fetchAndUpdate = (searchTerm) => {
-        const { dispatch} = this.props;
+        const { dispatch } = this.props;
         const getSearchResults = bindActionCreators(SearchActionCreators.getSearchResults, dispatch);
         jsonp(ApiProperties.WMT_API + searchTerm, null, function (err, data) {
             if (err) {
                 console.error(err.message);
-            } 
+            }
             else {
                 console.log(data);
-                if (data.totalResults > 0){
+                if (data.totalResults > 0) {
                     getSearchResults(searchTerm, data.items);
-                }else{
-                    getSearchResults(searchTerm, []); 
+                } else {
+                    getSearchResults(searchTerm, []);
                 }
-                
+
             }
         });
     }
@@ -52,33 +52,33 @@ class PrimaryLayout extends React.Component {
         let canvasstyle = "canvas";
         if (window.location.pathname.startsWith("/search")) {
             canvasstyle += " searchcanvas";
-            //searchcanvas = { "backgroundImage": "none" };
         }
         return (
-            <div className= {canvasstyle}>
+            <div className={canvasstyle}>
                 <NavBar />
-
-                <Route
-                    path="/" exact
-                    component={(props) => (
-                        <LandingPage
-                            searchState={this.props.searchState}
-                            getSearchResults={this.props.getSearchResults}
-                            {...props}
-                        />
-                    )}
-                />
-                <Route
-                    path="/search/:item?"
-                    component={(props) => (
-                        <SearchResultLayout
-                            searchState={this.props.searchState}
-                            getSearchResults={this.props.getSearchResults}
-                            {...props}
-                        />
-                    )}
-                />
-              
+                <Switch>
+                    <Route
+                        path="/" exact
+                        component={(props) => (
+                            <LandingPage
+                                searchState={this.props.searchState}
+                                getSearchResults={this.props.getSearchResults}
+                                {...props}
+                            />
+                        )}
+                    />
+                    <Route
+                        path="/search/:item?"
+                        component={(props) => (
+                            <SearchResultLayout
+                                searchState={this.props.searchState}
+                                getSearchResults={this.props.getSearchResults}
+                                {...props}
+                            />
+                        )}
+                    />
+                    <Route component={notFound} />
+                </Switch>
             </div>
 
         );
