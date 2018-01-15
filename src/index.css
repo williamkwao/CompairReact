@@ -198,11 +198,21 @@ em {
     background-color: #fff;
 }
 
-.notFound {
-    font-family: 'blanchcaps_inline', sans-serif;
-    text-align: center;
-    font-weight: normal;
-    margin: 226px;
-    font-size: 4.2em;
-    color: white;
+.buttons {
+  margin: 30px;
+}
+.buttons a.button {
+  font-weight: 700;
+  border: 2px solid #fff;
+  text-decoration: none;
+  padding: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 26px;
+  transition: all 0.2s ease-in-out;
+}
+.buttons a.button:hover {
+  background-color: #000;
+  color: white;
+  transition: all 0.2s ease-in-out;
 }
