@@ -22,17 +22,21 @@ export default class SearchResultLayout extends React.Component {
 
     render() {
         const searchResults = this.props.searchState.searchResults;
+        
 
-        const CardComponents = searchResults.map((item, index) => (
-            <Card
+        const CardComponents = searchResults.map((item, index) => {
+            
+            var cardImage = (item.mediumImage && item.mediumImage != null)? item.mediumImage : "/img/notfound.jpg";
+
+            return <Card
                 name={item.name}
                 salePrice={item.salePrice}
                 shortDescription={item.shortDescription}
-                image={item.mediumImage}
+                image={cardImage}
                 key={index}
                 productUrl={item.productUrl}
             />
-        ));
+        });
 
         return (
             <div>
