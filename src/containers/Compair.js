@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios'
 import jsonp from 'jsonp';
 import NavBar from '../components/NavBar';
@@ -52,28 +52,29 @@ class PrimaryLayout extends React.Component {
         return (
             <div className={canvasstyle}>
                 <NavBar />
-
-                <Route
-                    path="/" exact
-                    component={(props) => (
-                        <LandingPage
-                            searchState={this.props.searchState}
-                            getSearchResults={this.props.getSearchResults}
-                            {...props}
-                        />
-                    )}
-                />
-                <Route
-                    path="/search/:item?"
-                    component={(props) => (
-                        <SearchResultLayout
-                            searchState={this.props.searchState}
-                            getSearchResults={this.props.getSearchResults}
-                            {...props}
-                        />
-                    )}
-                />
-
+                <Switch>
+                    <Route
+                        path="/" exact
+                        component={(props) => (
+                            <LandingPage
+                                searchState={this.props.searchState}
+                                getSearchResults={this.props.getSearchResults}
+                                {...props}
+                            />
+                        )}
+                    />
+                    <Route
+                        path="/search/:item?"
+                        component={(props) => (
+                            <SearchResultLayout
+                                searchState={this.props.searchState}
+                                getSearchResults={this.props.getSearchResults}
+                                {...props}
+                            />
+                        )}
+                    />
+                    <Route component={notFound} />
+                </Switch>
             </div>
 
         );
