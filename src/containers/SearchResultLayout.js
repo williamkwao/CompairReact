@@ -22,12 +22,11 @@ export default class SearchResultLayout extends React.Component {
 
     render() {
         const searchResults = this.props.searchState.searchResults;
-        
+
 
         const CardComponents = searchResults.map((item, index) => {
-            
-            var cardImage = (item.mediumImage && item.mediumImage != null)? item.mediumImage : "/img/notfound.jpg";
-
+            var cardImage = (item.mediumImage) ? item.mediumImage : "/img/notfound.jpg";
+            var textLink = (item.retailer === "Amazon") ? "Go to Amazon" : "Go to Walmart";
             return <Card
                 name={item.name}
                 salePrice={item.salePrice}
@@ -35,6 +34,8 @@ export default class SearchResultLayout extends React.Component {
                 image={cardImage}
                 key={index}
                 productUrl={item.productURL}
+                urlText={textLink}
+
             />
         });
 
