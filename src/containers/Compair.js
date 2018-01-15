@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios'
-import jsonp from 'jsonp';
 import NavBar from '../components/NavBar';
 import LandingPage from './LandingPage'
 import notFound from '../components/notFound'
