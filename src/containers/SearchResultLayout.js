@@ -34,14 +34,14 @@ export default class SearchResultLayout extends React.Component {
                 shortDescription={item.shortDescription}
                 image={cardImage}
                 key={index}
-                productUrl={item.productUrl}
+                productUrl={item.productURL}
             />
         });
 
         return (
             <div>
                 <div className="container banner">
-                    <SearchBar onSearchSubmit={this.onSearchSubmit} searchTerm = {this.props.searchState.searchTerm} />
+                    <SearchBar onSearchSubmit={this.onSearchSubmit} searchTerm={this.props.searchState.searchTerm} />
                 </div>
                 <div>
                     <div className="row cards">
