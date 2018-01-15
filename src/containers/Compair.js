@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import axios from 'axios'
 import jsonp from 'jsonp';
 import NavBar from '../components/NavBar';
 import LandingPage from './LandingPage'
@@ -19,20 +20,15 @@ class Compair extends React.Component {
     fetchAndUpdate = (searchTerm) => {
         const { dispatch } = this.props;
         const getSearchResults = bindActionCreators(SearchActionCreators.getSearchResults, dispatch);
-        jsonp(ApiProperties.WMT_API + searchTerm, null, function (err, data) {
-            if (err) {
-                console.error(err.message);
-            }
-            else {
-                console.log(data);
-                if (data.totalResults > 0) {
-                    getSearchResults(searchTerm, data.items);
-                } else {
-                    getSearchResults(searchTerm, []);
-                }
-
-            }
-        });
+        axios.get(ApiProperties.WMT_API + searchTerm)
+            .then((response) => {
+                console.log(response);
+                getSearchResults(searchTerm, response.data.items);
+            })
+            .catch((error) => {
+                console.log(error)
+                getSearchResults(searchTerm, []);
+            });
     }
 
     render() {
