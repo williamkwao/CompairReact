@@ -10,19 +10,15 @@ export default class SearchBar extends Component {
     onSearchChange = (e) => {
         const search = e.target.value;
         this.setState({ searchTerm: search });
-        //console.log(this.state.searchTerm);
-
     };
 
     onSearchSubmit = (e) => {
         console.log(this.state.searchTerm)
         if (e) e.preventDefault();
-        if (e) e.stopPropagation();
         if (this.state.searchTerm) {
             this.props.onSearchSubmit(this.state.searchTerm);
             console.log(this.state.searchTerm);
         }
-
     }
 
     render() {
