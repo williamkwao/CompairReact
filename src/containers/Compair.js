@@ -63,7 +63,7 @@ class PrimaryLayout extends React.Component {
                         )}
                     />
                     <Route
-                        path="/search/:item?"
+                        path="/search"
                         component={(props) => (
                             <SearchResultLayout
                                 searchState={this.props.searchState}
