@@ -20,7 +20,7 @@ export default class SearchBar extends Component {
             console.log(this.state.searchTerm);
         }
     }
-
+   
     render() {
 
         return (
