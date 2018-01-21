@@ -2,5 +2,5 @@
 # Compair React Application
 ---
 
-## An application to search different online retailers
+## Application to search major retailers in one place
 
