@@ -15,7 +15,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+nav .brand-logo{
+    position: relative;
+}
 .nav-top {
     background-color: transparent;
     box-shadow: none;
@@ -64,7 +66,7 @@ input[type=search] {
     font-size: 24px !important;
     padding: 0;
     box-shadow: none;
-    box-sizing: content-box;
+    box-sizing : border-box !important;
     padding-left: 20px !important;
     transition: all 0.3s;
 }
