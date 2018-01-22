@@ -10,25 +10,21 @@ export default class SearchBar extends Component {
     onSearchChange = (e) => {
         const search = e.target.value;
         this.setState({ searchTerm: search });
-        //console.log(this.state.searchTerm);
-
     };
 
     onSearchSubmit = (e) => {
         console.log(this.state.searchTerm)
         if (e) e.preventDefault();
-        if (e) e.stopPropagation();
         if (this.state.searchTerm) {
             this.props.onSearchSubmit(this.state.searchTerm);
             console.log(this.state.searchTerm);
         }
-
     }
-
+   
     render() {
 
         return (
-            <div id="seach-bar" className="input-field col s6 m4 l4">
+            <div id="seach-bar" className="input-field col s12 m4 l4">
                 <form onSubmit={this.onSearchSubmit}>
                     <input
                         placeholder="Find the best price ..."
