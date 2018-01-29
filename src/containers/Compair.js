@@ -29,13 +29,12 @@ class Compair extends React.Component {
                 getSearchResults(searchTerm, []);
             });
     }
-
     render() {
         const { dispatch, searchState } = this.props;
-
+        const updateState = bindActionCreators(SearchActionCreators.getSearchResults, dispatch);
         return (
             <BrowserRouter>
-                <PrimaryLayout searchState={searchState} getSearchResults={this.fetchAndUpdate} />
+                <PrimaryLayout updateState = {updateState} searchState={searchState} getSearchResults={this.fetchAndUpdate} />
             </BrowserRouter>
         )
     }
@@ -63,9 +62,10 @@ class PrimaryLayout extends React.Component {
                         )}
                     />
                     <Route
-                        path="/search/:item?"
+                        path="/search"
                         component={(props) => (
                             <SearchResultLayout
+                                updateState = {this.props.updateState}
                                 searchState={this.props.searchState}
                                 getSearchResults={this.props.getSearchResults}
                                 {...props}
