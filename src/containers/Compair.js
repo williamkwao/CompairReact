@@ -9,32 +9,40 @@ import LandingPage from './LandingPage'
 import notFound from '../components/notFound'
 import SearchResultLayout from './SearchResultLayout';
 import * as SearchActionCreators from '../actions/search';
+import * as RequestStates from '../actions/RequestStates';
 import * as ApiProperties from '../properties/api-properties';
+
+
 
 class Compair extends React.Component {
     static propTypes = {
-        searhState: PropTypes.object
+        searchState: PropTypes.object
     }
 
     fetchAndUpdate = (searchTerm) => {
         const { dispatch } = this.props;
         const getSearchResults = bindActionCreators(SearchActionCreators.getSearchResults, dispatch);
+        const setRequestState = bindActionCreators(SearchActionCreators.setRequestState, dispatch);
         axios.get(ApiProperties.WMT_API + searchTerm)
             .then((response) => {
                 console.log(response);
                 getSearchResults(searchTerm, response.data.items);
+                setRequestState(RequestStates.REQUEST_COMPLETE);
+                
             })
             .catch((error) => {
                 console.log(error)
                 getSearchResults(searchTerm, []);
+               setRequestState(RequestStates.REQUEST_COMPLETE);
             });
     }
     render() {
         const { dispatch, searchState } = this.props;
+        const setRequestState = bindActionCreators(SearchActionCreators.setRequestState, dispatch);
         const updateState = bindActionCreators(SearchActionCreators.getSearchResults, dispatch);
         return (
             <BrowserRouter>
-                <PrimaryLayout updateState = {updateState} searchState={searchState} getSearchResults={this.fetchAndUpdate} />
+                <PrimaryLayout setRequestState ={setRequestState} updateState = {updateState} searchState={searchState} getSearchResults={this.fetchAndUpdate} />
             </BrowserRouter>
         )
     }
@@ -57,6 +65,8 @@ class PrimaryLayout extends React.Component {
                             <LandingPage
                                 searchState={this.props.searchState}
                                 getSearchResults={this.props.getSearchResults}
+                                setRequestState = {this.props.setRequestState}
+                                updateState = {this.props.updateState}
                                 {...props}
                             />
                         )}
@@ -68,6 +78,7 @@ class PrimaryLayout extends React.Component {
                                 updateState = {this.props.updateState}
                                 searchState={this.props.searchState}
                                 getSearchResults={this.props.getSearchResults}
+                                setRequestState = {this.props.setRequestState}
                                 {...props}
                             />
                         )}
@@ -79,8 +90,6 @@ class PrimaryLayout extends React.Component {
         );
     };
 }
-
-
 
 const mapStateToProps = state => (
     {
