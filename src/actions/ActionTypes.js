@@ -1,1 +1,2 @@
 export const UPDATE_SEARCH_RESULTS = 'search/UPDATE_SEARCH_RESULTS';
+export const SET_REQUEST_STATE = 'search/UPDATE_REQUEST_STATE';

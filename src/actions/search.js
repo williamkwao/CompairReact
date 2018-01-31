@@ -6,5 +6,15 @@ export const getSearchResults =(searchTerm, items) =>{
       searchResults: items,
       searchTerm
   }
+  
 }
+
+export const setRequestState =(requestState) =>{
+  return{
+       type: ActionTypes.SET_REQUEST_STATE,
+       requestState: requestState,
+  }
+}
+
+
 
