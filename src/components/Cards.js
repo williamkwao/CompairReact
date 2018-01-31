@@ -31,11 +31,13 @@ class Cards extends Component {
                 />
             });
 
-        }else{
-            CardComponents =         
-                <div className="col s12 m12 l12">
-                    <h1>...Loading</h1>
-                </div>;     
+        } else {
+            CardComponents =
+                <div className="col s12 m12 l12" >
+                    <div className="banner-content">
+                        <img src="/img/moneygif.gif" />
+                    </div>
+                </div>;
         }
 
 
