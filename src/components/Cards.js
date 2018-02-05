@@ -35,7 +35,7 @@ class Cards extends Component {
             CardComponents =
                 <div className="col s12 m12 l12" >
                     <div className="banner-content">
-                        <img src="/img/moneygif.gif" />
+                        <img src="/img/loadinggif.gif" />
                     </div>
                 </div>;
         }
