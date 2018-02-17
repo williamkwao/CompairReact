@@ -23,7 +23,7 @@ const Card = (props) => {
                         <span className="activator item-title">{props.name}</span>
                     </div>
                     <div className="card-price">
-                        <p>Price: <em>${props.salePrice}</em></p>
+                        <p><em>${props.salePrice}</em></p>
                     </div>
                     <div className={linkStyle}>
                         <p><a href={props.productUrl}>{props.urlText}</a></p>

@@ -64,6 +64,7 @@ input[type=search] {
     height: 3rem;
     width: 100%;
     font-size: 24px !important;
+    font-family: Lato;
     padding: 0;
     box-shadow: none;
     box-sizing : border-box !important;
@@ -107,7 +108,8 @@ input[type=search]:focus {
 }
 
 .item-title {
-    font: 15px Courier;
+    font: 15px Lato;
+    font-weight: 500;
     overflow: hidden;
     text-overflow: ellipsis !important;
     display: -webkit-box;
@@ -138,9 +140,9 @@ input[type=search]:focus {
     color: black;
 }
 
-em {
+.card-price em {
     font: 200 20px monospace;
-    color: #48cfad;
+    color: #197319;
     font-size: 22px;
 }
 
