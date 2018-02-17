@@ -55,6 +55,10 @@ nav ul a {
     padding-top: 100px;
 }
 
+.input-field input[type=search]{
+ display: inline;
+}
+
 input[type=search] {
     background-color: transparent;
     /* border: none !important; */
@@ -62,8 +66,9 @@ input[type=search] {
     border-radius: 10px !important;
     outline: none;
     height: 3rem;
-    width: 100%;
+    width: 80%;
     font-size: 24px !important;
+    font-family: Lato;
     padding: 0;
     box-shadow: none;
     box-sizing : border-box !important;
@@ -78,6 +83,28 @@ input[type=search]:focus {
     color: #fff !important;
     border: 1px solid #fff !important;
     padding-left: 30px !important;
+}
+
+input[type=submit], input[type=submit]:hover {
+    position: absolute;
+    right: 1px;
+	border:1px solid #adc5cf;
+	color:#fff;
+    cursor: pointer;
+    background: transparent;
+}
+
+input[type=submit]:hover{
+    color: #fff !important;
+}
+.search-button {
+    position: absolute;
+    position: top right;
+    height: 3rem;
+    z-index: 2;
+    border-right: transparent !important;
+    border-top: transparent !important;
+    border-bottom: transparent !important;
 }
 
 #search {
@@ -107,7 +134,8 @@ input[type=search]:focus {
 }
 
 .item-title {
-    font: 15px Courier;
+    font: 15px Lato;
+    font-weight: 500;
     overflow: hidden;
     text-overflow: ellipsis !important;
     display: -webkit-box;
@@ -116,6 +144,7 @@ input[type=search]:focus {
     min-height: 32px;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    display: block;
 }
 
 .black {
@@ -138,9 +167,9 @@ input[type=search]:focus {
     color: black;
 }
 
-em {
+.card-price em {
     font: 200 20px monospace;
-    color: #48cfad;
+    color: #197319;
     font-size: 22px;
 }
 
@@ -183,6 +212,13 @@ em {
 .searchcanvas input[type=search] {
     border: 1px solid #000 !important;
     color: #000 !important;
+}
+
+.searchcanvas input[type=submit], input[type=submit]:hover {
+  color: #000;
+}
+.searchcanvas input[type=submit]:hover{
+ color: #000 !important;
 }
 
 .searchcanvas .brand-logo {
