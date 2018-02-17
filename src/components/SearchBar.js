@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default class SearchBar extends Component {
 
     state = {
-        searchTerm: this.props.searchTerm,
+        searchTerm: this.props.searchTerm
     };
 
     onSearchChange = (e) => {
@@ -25,14 +25,21 @@ export default class SearchBar extends Component {
 
         return (
             <div id="seach-bar" className="input-field col s12 m4 l4">
-                <form onSubmit={this.onSearchSubmit}>
+                <form id = "search" onSubmit={this.onSearchSubmit}>
+                    
                     <input
                         placeholder="Find the best price ..."
-                        id="search" type="search"
+                        type="search"
                         className="validate"
                         onChange={this.onSearchChange}
                         value={this.state.searchTerm}
                     />
+                    <input 
+                     className="search-button" 
+                     type="submit"
+                     value= 'Search'
+                     form = "search"
+                     />            
                 </form>
             </div>
         );
