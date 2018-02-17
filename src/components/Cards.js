@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card from './Card';
 import * as RequestStates from '../actions/RequestStates';
-
+import unescape from 'unescape';
 
 class Cards extends Component {
     componentDidMount = () => {
@@ -23,7 +23,7 @@ class Cards extends Component {
                 return <Card
                     name={item.name}
                     salePrice={item.salePrice}
-                    shortDescription={item.shortDescription}
+                    shortDescription={unescape(item.shortDescription, 'all')}
                     image={cardImage}
                     key={index}
                     productUrl={item.productURL}
