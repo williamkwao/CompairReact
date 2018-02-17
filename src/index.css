@@ -144,6 +144,7 @@ input[type=submit]:hover{
     min-height: 32px;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    display: block;
 }
 
 .black {
