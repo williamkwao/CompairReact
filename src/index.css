@@ -11,7 +11,7 @@ body {
 
 .canvas {
     height: 100vh;
-    background-image: url("/img/bgimage.png");
+    background-image: url("/img/bgimage-min.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
