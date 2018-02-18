@@ -20,10 +20,11 @@ class Cards extends Component {
             CardComponents = searchResults.map((item, index) => {
                 var cardImage = (item.mediumImage) ? item.mediumImage : "/img/notfound.jpg";
                 var textLink = (item.retailer === "Amazon") ? "Go to Amazon" : "Go to Walmart";
+                var shortDescription = (item.retailer === "Walmart")? unescape(item.shortDescription, 'all'): item.shortDescription
                 return <Card
                     name={item.name}
                     salePrice={item.salePrice}
-                    shortDescription={unescape(item.shortDescription, 'all')}
+                    shortDescription={shortDescription}
                     image={cardImage}
                     key={index}
                     productUrl={item.productURL}
