@@ -24,7 +24,7 @@ export default class SearchBar extends Component {
     render() {
 
         return (
-            <div id="seach-bar" className="input-field col s12 m4 l4">
+            <div id="search-bar" className="input-field col s12 m4 l4">
                 <form id = "search" onSubmit={this.onSearchSubmit}>
                     
                     <input
@@ -34,12 +34,12 @@ export default class SearchBar extends Component {
                         onChange={this.onSearchChange}
                         value={this.state.searchTerm}
                     />
-                    <input 
+                    <button 
                      className="search-button" 
                      type="submit"
-                     value= 'Search'
-                     form = "search"
-                     />            
+                     >
+                      <i className="material-icons" id="search-icon">search</i>
+                     </button>
                 </form>
             </div>
         );

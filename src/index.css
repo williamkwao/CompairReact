@@ -85,7 +85,7 @@ input[type=search]:focus {
     padding-left: 30px !important;
 }
 
-input[type=submit], input[type=submit]:hover {
+#search-bar button[type=submit], button[type=submit]:hover {
     position: absolute;
     right: 1px;
 	border:1px solid #adc5cf;
@@ -94,7 +94,12 @@ input[type=submit], input[type=submit]:hover {
     background: transparent;
 }
 
-input[type=submit]:hover{
+#search-icon{
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+#search-bar button[type=submit]:hover{
     color: #fff !important;
 }
 .search-button {
@@ -214,13 +219,15 @@ input[type=submit]:hover{
     color: #000 !important;
 }
 
-.searchcanvas input[type=submit], input[type=submit]:hover {
+.searchcanvas button[type=submit], button[type=submit]:hover {
   color: #000;
 }
-.searchcanvas input[type=submit]:hover{
+.searchcanvas button[type=submit]:hover{
  color: #000 !important;
 }
-
+.searchcanvas #search-icon{
+    color: #000;
+}
 .searchcanvas .brand-logo {
     color: #000;
 }
